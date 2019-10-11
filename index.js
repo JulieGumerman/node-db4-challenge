@@ -1,6 +1,6 @@
 const express = require("express");
 const server = express();
-const router = require("./routes-models/routes.js")
+const router = require("./routes_models/routes.js")
 
 const port = 6789;
 
