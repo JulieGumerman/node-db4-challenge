@@ -23,8 +23,10 @@ router.get("/recipes/:id", (req, res) => {
         .catch(err => res.status(500).json({ error: "Order pizza from Domino's. Don't use this star-crossed recipe"}))
 })
 
-// router.get("/instructions", (req, res) => {
-//     db("instructions").get...
-// })
+router.get("/recipes/:id/instructions", (req, res) => {
+    Cookbook.getDirections(req.params.id)
+        .then(recipe => res.status(200).json(recipe))
+        .catch(err => res.status(500).json({ message: "Well, kiddo, looks like you'll have to wing it."}))
+})
 
 module.exports = router;

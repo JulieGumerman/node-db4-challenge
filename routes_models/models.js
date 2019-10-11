@@ -18,8 +18,13 @@ const getShoppingList = (id) => {
         
 }
 
+const getDirections = (id) => {
+    return db("instructions").where("recipe_id", "=", id)
+}
+
 module.exports = {
     findRecipes,
     findRecipeById,
-    getShoppingList
+    getShoppingList,
+    getDirections
 }
